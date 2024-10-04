@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=500, initial-scale=1" />
+    <meta name="author" content="Sin Kau Chu" />
+    <title>Request a New Artist</title>
+    <link rel="stylesheet" href="./css/water.css"/>
+    <style>
+      h1,
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      label,
+      input,
+      textarea,
+      button,
+      .input-container {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      label {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      input,
+      textarea {
+        width: calc(50% - 20px);
+        padding: 10px;
+      }
+
+      .input-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .input-container input {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .remove-button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: 10px;
+        width: 120px;
+        height: 40px;
+      }
+
+      .remove-button:hover {
+        background-color: darkgrey;
+      }
+
+      #addSocialMediaButton,
+      #addSongButton {
+        margin-bottom: 20px;
+      }
+
+      button[type="submit"] {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="font-weight: bold; text-decoration: underline; font-size: 18px;">
+      <a href="."><-Back</a>
+  </p>
+  
+    <header>
+      <h1>Request a New Artist</h1>
+    </header>
+    <main>
+      <form id="newArtistForm" action="https://httpbin.org/post" method="post">
+        <label for="artistName">Artist's Name (the length is 50 at most):</label>
+        <input type="text" id="artistName" name="artistName" maxlength="50" required />
+
+        <label for="musicGenre">Music Genre:</label>
+        <input list="genres" id="musicGenre" name="musicGenre" required />
+        <datalist id="genres">
+          <option value="Pop"></option>
+          <option value="Rock"></option>
+          <option value="Hip-hop"></option>
+          <option value="R&B"></option>
+          <option value="EDM"></option>
+          <option value="Jazz"></option>
+          <option value="Classical"></option>
+          <option value="Country"></option>
+          <option value="Reggae"></option>
+          <option value="Blues"></option>
+        </datalist>
+
+        <label>Social Media URLs:</label>
+        <div id="socialMediaContainer">
+          <div class="input-container">
+            <input
+              type="url"
+              name="socialMediaUrls"
+              placeholder="Enter a social media URL"
+              required
+            />
+            <button type="button" class="remove-button" onclick="removeInput(this)">Remove</button>
+          </div>
+        </div>
+        <button type="button" id="addSocialMediaButton">Add Social Media URL</button>
+
+        <label>Example Songs/Videos:</label>
+        <div id="exampleSongsContainer">
+          <div class="input-container">
+            <input type="url" name="exampleSongs" placeholder="Enter a song/video URL" required />
+            <button type="button" class="remove-button" onclick="removeInput(this)">Remove</button>
+          </div>
+        </div>
+        <button type="button" id="addSongButton">Add Song/Video URL</button>
+
+        <label for="explicitLyrics">
+          <input type="checkbox" id="explicitLyrics" name="explicitLyrics" />
+          Explicit Lyrics
+        </label>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="formMessage"></p>
+    </main>
+    <script src="./js/add-artist.js"></script>
+  </body>
+</html>
