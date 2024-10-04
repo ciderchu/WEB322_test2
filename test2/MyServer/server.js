@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     console.log("GET Route INDEX");
     
     // absolute path to the HTML file
-    var filePath = path.join(__dirname, '/views/index.html');
+    var filePath = path.join(__dirname, './views/index.html');
 
     // error check
     console.log(filePath);
@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
 app.get('/add-artist', (req, res) => {
     console.log("GET Route Add_Artist");
     
-    // absolute path to the HTML file
-    var filePath = path.join(__dirname, '/views/add-artist.html');
+    // absolute path to the HTML filedd
+    var filePath = path.join(__dirname, './views/add-artist.html');
 
     // error check
     console.log(filePath);

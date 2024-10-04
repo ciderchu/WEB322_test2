@@ -61,7 +61,7 @@ artists.forEach((artist) => {
 const addButton = document.createElement("button");
 addButton.textContent = "New";
 addButton.id = "add-artist-button";
-addButton.onclick = () => (location.href = "add-artist.html");
+addButton.onclick = () => (location.href = "./add-artist");
 menu.appendChild(addButton);
 
 if (artists.length > 0) {
