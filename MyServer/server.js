@@ -8,7 +8,7 @@ const app = express();
 //server port
 const HTTP_PORT = 3000;
 
-app.use(express.static('public'));
+
 //GET route Index
 app.get('/', (req, res) => {
     console.log("GET Route INDEX");
@@ -41,5 +41,7 @@ app.get('/add-artist', (req, res) => {
 app.listen(HTTP_PORT, () => {
     console.log(`Server is listening on port ${HTTP_PORT}`);
 })
+
+app.use(express.static('public'));
 
 
