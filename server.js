@@ -8,7 +8,7 @@ const app = express();
 //server port
 const HTTP_PORT = 3000;
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 
 //GET route Index
